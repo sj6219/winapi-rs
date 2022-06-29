@@ -4,11 +4,11 @@
 extern crate ws2_32;
 use ws2_32::*;
 #[inline(never)] fn bb<T>(_: T) {}
-#[test] #[cfg(target_arch="x86")]
+#[test] #[cfg(target_pointer_width = "32")]
 fn functions_x86() {
     bb(WSCInstallProviderAndChains);
 }
-#[test] #[cfg(target_arch="x86_64")]
+#[test] #[cfg(target_pointer_width = "64")]
 fn functions_x86_64() {
     bb(WSCDeinstallProvider32);
     bb(WSCEnableNSProvider32);

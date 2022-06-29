@@ -145,7 +145,7 @@ extern "system" {
         pFlags: *const ULONG, ppidl: *const HSTRING
     );
 }
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 extern "system" {
     pub fn HSTRING_UserSize64(
         pFlags: *const ULONG, StartingSize: ULONG, ppidl: *const HSTRING

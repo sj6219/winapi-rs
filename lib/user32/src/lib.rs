@@ -434,9 +434,9 @@ extern "system" {
         hInstance: HINSTANCE, lpClassName: LPCWSTR, lpWndClass: LPWNDCLASSW,
     ) -> BOOL;
     pub fn GetClassLongA(hWnd: HWND, nIndex: c_int) -> DWORD;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetClassLongPtrA(hWnd: HWND, nIndex: c_int) -> ULONG_PTR;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetClassLongPtrW(hWnd: HWND, nIndex: c_int) -> ULONG_PTR;
     pub fn GetClassLongW(hWnd: HWND, nIndex: c_int) -> DWORD;
     pub fn GetClassNameA(hWnd: HWND, lpClassName: LPCSTR, nMaxCount: c_int) -> c_int;
@@ -612,9 +612,9 @@ extern "system" {
     // pub fn GetWindowFeedbackSetting();
     // pub fn GetWindowInfo();
     pub fn GetWindowLongA(hWnd: HWND, nIndex: c_int) -> LONG;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetWindowLongPtrA(hWnd: HWND, nIndex: c_int) -> LONG_PTR;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetWindowLongPtrW(hWnd: HWND, nIndex: c_int) -> LONG_PTR;
     pub fn GetWindowLongW(hWnd: HWND, nIndex: c_int) -> LONG;
     // pub fn GetWindowModuleFileName();
@@ -919,9 +919,9 @@ extern "system" {
     pub fn SetCaretBlinkTime(uMSeconds: UINT) -> BOOL;
     pub fn SetCaretPos(x: c_int, y: c_int) -> BOOL;
     pub fn SetClassLongA(hWnd: HWND, nIndex: c_int, dwNewLong: LONG) -> DWORD;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn SetClassLongPtrA(hWnd: HWND, nIndex: c_int, dwNewLong: LONG_PTR) -> ULONG_PTR;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn SetClassLongPtrW(hWnd: HWND, nIndex: c_int, dwNewLong: LONG_PTR) -> ULONG_PTR;
     pub fn SetClassLongW(hWnd: HWND, nIndex: c_int, dwNewLong: LONG) -> DWORD;
     pub fn SetClassWord(hWnd: HWND, nIndex: c_int, wNewWord: WORD) -> WORD;
@@ -990,9 +990,9 @@ extern "system" {
     // pub fn SetWindowDisplayAffinity();
     // pub fn SetWindowFeedbackSetting();
     pub fn SetWindowLongA(hWnd: HWND, nIndex: c_int, dwNewLong: LONG) -> LONG;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn SetWindowLongPtrA(hWnd: HWND, nIndex: c_int, dwNewLong: LONG_PTR) -> LONG_PTR;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn SetWindowLongPtrW(hWnd: HWND, nIndex: c_int, dwNewLong: LONG_PTR) -> LONG_PTR;
     pub fn SetWindowLongW(hWnd: HWND, nIndex: c_int, dwNewLong: LONG) -> LONG;
     pub fn SetWindowPlacement(hWnd: HWND, lpwndpl: *const WINDOWPLACEMENT) -> BOOL;

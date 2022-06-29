@@ -227,14 +227,14 @@ STRUCT!{struct RIP_INFO {
     dwType: ::DWORD,
 }}
 pub type LPRIP_INFO = *mut RIP_INFO;
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{nodebug struct DEBUG_EVENT {
     dwDebugEventCode: ::DWORD,
     dwProcessId: ::DWORD,
     dwThreadId: ::DWORD,
     u: [u8; 160],
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{nodebug struct DEBUG_EVENT {
     dwDebugEventCode: ::DWORD,
     dwProcessId: ::DWORD,

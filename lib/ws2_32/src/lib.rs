@@ -401,7 +401,7 @@ extern "system" {
         lpdwCatalogEntryId: LPDWORD, lpErrno: LPINT,
     ) -> c_int;
 }
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 extern "system" {
     pub fn WSCDeinstallProvider32(lpProviderId: LPGUID, lpErrno: LPINT) -> c_int;
     pub fn WSCEnableNSProvider32(lpProviderId: LPGUID, fEnable: BOOL) -> INT;

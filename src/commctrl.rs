@@ -493,7 +493,7 @@ STRUCT!{struct NMHDFILTERBTNCLICK {
     rc: ::RECT,
 }}
 pub type LPNMHDFILTERBTNCLICK = *mut NMHDFILTERBTNCLICK;
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct TBBUTTON {
     iBitmap: ::c_int,
     idCommand: ::c_int,
@@ -503,7 +503,7 @@ STRUCT!{struct TBBUTTON {
     dwData: ::DWORD_PTR,
     iString: ::INT_PTR,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct TBBUTTON {
     iBitmap: ::c_int,
     idCommand: ::c_int,

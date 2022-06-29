@@ -34,14 +34,14 @@ STRUCT!{struct netent {
     n_addrtype: ::c_short,
     n_net: u_long,
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct servent {
     s_name: *mut ::c_char,
     s_aliases: *mut *mut ::c_char,
     s_port: ::c_short,
     s_proto: *mut ::c_char,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct servent {
     s_name: *mut ::c_char,
     s_aliases: *mut *mut ::c_char,
@@ -55,7 +55,7 @@ STRUCT!{struct protoent {
 }}
 pub const WSADESCRIPTION_LEN: usize = 256;
 pub const WSASYS_STATUS_LEN: usize = 128;
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{nodebug struct WSADATA {
     wVersion: ::WORD,
     wHighVersion: ::WORD,
@@ -65,7 +65,7 @@ STRUCT!{nodebug struct WSADATA {
     iMaxUdpDg: ::c_ushort,
     lpVendorInfo: *mut ::c_char,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{nodebug struct WSADATA {
     wVersion: ::WORD,
     wHighVersion: ::WORD,
@@ -222,12 +222,12 @@ STRUCT!{struct WSACOMPLETION_Port {
     hPort: ::HANDLE,
     Key: ::ULONG_PTR,
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct WSACOMPLETION {
     Type: WSACOMPLETIONTYPE,
     Parameters: [u8; 12],
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct WSACOMPLETION {
     Type: WSACOMPLETIONTYPE,
     Parameters: [u8; 24],

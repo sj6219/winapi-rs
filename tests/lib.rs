@@ -4,13 +4,13 @@
 extern crate winapi;
 use std::mem::{size_of, align_of};
 use winapi::*;
-#[test] #[cfg(target_arch = "x86")]
+#[test] #[cfg(target_pointer_width = "32")]
 fn template() {
 }
-#[test] #[cfg(target_arch = "x86_64")]
+#[test] #[cfg(target_pointer_width = "64")]
 fn template() {
 }
-#[test] #[cfg(target_arch = "x86")]
+#[test] #[cfg(target_pointer_width = "32")]
 fn d3d11() {
     assert_eq!(size_of::<D3D11_INPUT_ELEMENT_DESC>(), 28);
     assert_eq!(align_of::<D3D11_INPUT_ELEMENT_DESC>(), 4);
@@ -273,7 +273,7 @@ fn d3d11() {
     assert_eq!(size_of::<D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC>(), 16);
     assert_eq!(align_of::<D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC>(), 4);
 }
-#[test] #[cfg(target_arch = "x86_64")]
+#[test] #[cfg(target_pointer_width = "64")]
 fn d3d11() {
     assert_eq!(size_of::<D3D11_INPUT_ELEMENT_DESC>(), 32);
     assert_eq!(align_of::<D3D11_INPUT_ELEMENT_DESC>(), 8);
@@ -536,7 +536,7 @@ fn d3d11() {
     assert_eq!(size_of::<D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC>(), 16);
     assert_eq!(align_of::<D3D11_VIDEO_PROCESSOR_OUTPUT_VIEW_DESC>(), 4);
 }
-#[test] #[cfg(target_arch = "x86")]
+#[test] #[cfg(target_pointer_width = "32")]
 fn hidclass() {
     assert_eq!(size_of::<HID_XFER_PACKET>(), 12);
     assert_eq!(align_of::<HID_XFER_PACKET>(), 4);
@@ -545,7 +545,7 @@ fn hidclass() {
     assert_eq!(size_of::<HID_DRIVER_CONFIG>(), 8);
     assert_eq!(align_of::<HID_DRIVER_CONFIG>(), 4);
 }
-#[test] #[cfg(target_arch = "x86_64")]
+#[test] #[cfg(target_pointer_width = "64")]
 fn hidclass() {
     assert_eq!(size_of::<HID_XFER_PACKET>(), 16);
     assert_eq!(align_of::<HID_XFER_PACKET>(), 8);
@@ -554,7 +554,7 @@ fn hidclass() {
     assert_eq!(size_of::<HID_DRIVER_CONFIG>(), 8);
     assert_eq!(align_of::<HID_DRIVER_CONFIG>(), 4);
 }
-#[test] #[cfg(target_arch = "x86")]
+#[test] #[cfg(target_pointer_width = "32")]
 fn hidpi() {
     assert_eq!(size_of::<USAGE_AND_PAGE>(), 4);
     assert_eq!(align_of::<USAGE_AND_PAGE>(), 2);
@@ -575,7 +575,7 @@ fn hidpi() {
     assert_eq!(size_of::<HIDP_KEYBOARD_MODIFIER_STATE>(), 4);
     assert_eq!(align_of::<HIDP_KEYBOARD_MODIFIER_STATE>(), 4);
 }
-#[test] #[cfg(target_arch = "x86_64")]
+#[test] #[cfg(target_pointer_width = "64")]
 fn hidpi() {
     assert_eq!(size_of::<USAGE_AND_PAGE>(), 4);
     assert_eq!(align_of::<USAGE_AND_PAGE>(), 2);
@@ -596,14 +596,14 @@ fn hidpi() {
     assert_eq!(size_of::<HIDP_KEYBOARD_MODIFIER_STATE>(), 4);
     assert_eq!(align_of::<HIDP_KEYBOARD_MODIFIER_STATE>(), 4);
 }
-#[test] #[cfg(target_arch = "x86")]
+#[test] #[cfg(target_pointer_width = "32")]
 fn hidsdi() {
     assert_eq!(size_of::<HIDD_CONFIGURATION>(), 12);
     assert_eq!(align_of::<HIDD_CONFIGURATION>(), 4);
     assert_eq!(size_of::<HIDD_ATTRIBUTES>(), 12);
     assert_eq!(align_of::<HIDD_ATTRIBUTES>(), 4);
 }
-#[test] #[cfg(target_arch = "x86_64")]
+#[test] #[cfg(target_pointer_width = "64")]
 fn hidsdi() {
     assert_eq!(size_of::<HIDD_CONFIGURATION>(), 16);
     // assert_eq!(align_of::<HIDD_CONFIGURATION>(), 4); // FIXME

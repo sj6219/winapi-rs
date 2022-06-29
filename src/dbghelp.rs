@@ -1,7 +1,7 @@
 // Copyright © 2015, Peter Atashian
 // Licensed under the MIT License <LICENSE.md>
 //! DbgHelp include file
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct LOADED_IMAGE {
     ModuleName: ::PSTR,
     hFile: ::HANDLE,
@@ -18,7 +18,7 @@ STRUCT!{struct LOADED_IMAGE {
     Links: ::LIST_ENTRY,
     SizeOfImage: ::ULONG,
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct LOADED_IMAGE {
     ModuleName: ::PSTR,
     hFile: ::HANDLE,
@@ -57,7 +57,7 @@ pub type PFIND_EXE_FILE_CALLBACK = Option<unsafe extern "system" fn(
 pub type PFIND_EXE_FILE_CALLBACKW = Option<unsafe extern "system" fn(
     FileHandle: ::HANDLE, FileName: ::PCWSTR, CallerData: ::PVOID,
 ) -> ::BOOL>;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct IMAGE_DEBUG_INFORMATION {
     List: ::LIST_ENTRY,
     ReservedSize: ::DWORD,
@@ -91,7 +91,7 @@ STRUCT!{struct IMAGE_DEBUG_INFORMATION {
     ReservedOriginalFunctionTableBaseAddress: ::DWORD,
     Reserved: [::DWORD; 2],
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PIMAGE_DEBUG_INFORMATION = *mut IMAGE_DEBUG_INFORMATION;
 pub type PENUMDIRTREE_CALLBACK = Option<unsafe extern "system" fn(
     FilePath: ::PCSTR, CallerData: ::PVOID,
@@ -153,17 +153,17 @@ STRUCT!{struct ADDRESS64 {
     Mode: ::ADDRESS_MODE,
 }}
 pub type LPADDRESS64 = *mut ADDRESS64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type ADDRESS = ADDRESS64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type LPADDRESS = LPADDRESS64;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct ADDRESS {
     Offset: ::DWORD,
     Segment: ::WORD,
     Mode: ::ADDRESS_MODE,
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type LPADDRESS = *mut ADDRESS;
 STRUCT!{struct KDHELP64 {
     Thread: ::DWORD64,
@@ -182,11 +182,11 @@ STRUCT!{struct KDHELP64 {
     Reserved1: [::DWORD64; 4],
 }}
 pub type PKDHELP64 = *mut KDHELP64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type KDHELP = KDHELP64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PKDHELP = PKDHELP64;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct KDHELP {
     Thread: ::DWORD,
     ThCallbackStack: ::DWORD,
@@ -201,7 +201,7 @@ STRUCT!{struct KDHELP {
     StackLimit: ::DWORD,
     Reserved: [::DWORD; 5],
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PKDHELP = *mut KDHELP;
 STRUCT!{struct STACKFRAME64 {
     AddrPC: ::ADDRESS64,
@@ -235,11 +235,11 @@ STRUCT!{struct STACKFRAME_EX {
     InlineFrameContext: ::DWORD,
 }}
 pub type LPSTACKFRAME_EX = *mut STACKFRAME_EX;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type STACKFRAME = STACKFRAME64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type LPSTACKFRAME = LPSTACKFRAME64;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct STACKFRAME {
     AddrPC: ::ADDRESS,
     AddrReturn: ::ADDRESS,
@@ -253,7 +253,7 @@ STRUCT!{struct STACKFRAME {
     KdHelp: ::KDHELP,
     AddrBStore: ::ADDRESS,
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type LPSTACKFRAME = *mut STACKFRAME;
 pub type PREAD_PROCESS_MEMORY_ROUTINE64 = Option<unsafe extern "system" fn(
     hProcess: ::HANDLE, qwBaseAddress: ::DWORD64, lpBuffer: ::PVOID, nSize: ::DWORD,
@@ -270,28 +270,28 @@ pub type PTRANSLATE_ADDRESS_ROUTINE64 = Option<unsafe extern "system" fn(
 ) -> ::DWORD64>;
 pub const SYM_STKWALK_DEFAULT: ::DWORD = 0x00000000;
 pub const SYM_STKWALK_FORCE_FRAMEPTR: ::DWORD = 0x00000001;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PREAD_PROCESS_MEMORY_ROUTINE = PREAD_PROCESS_MEMORY_ROUTINE64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PFUNCTION_TABLE_ACCESS_ROUTINE = PFUNCTION_TABLE_ACCESS_ROUTINE64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PGET_MODULE_BASE_ROUTINE = PGET_MODULE_BASE_ROUTINE64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PTRANSLATE_ADDRESS_ROUTINE = PTRANSLATE_ADDRESS_ROUTINE64;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PREAD_PROCESS_MEMORY_ROUTINE = Option<unsafe extern "system" fn(
     hProcess: ::HANDLE, qwBaseAddress: ::DWORD, lpBuffer: ::PVOID, nSize: ::DWORD,
     lpNumberOfBytesRead: ::PDWORD,
 ) -> ::BOOL>;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PFUNCTION_TABLE_ACCESS_ROUTINE = Option<unsafe extern "system" fn(
     ahProcess: ::HANDLE, AddrBase: ::DWORD,
 ) -> ::PVOID>;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PGET_MODULE_BASE_ROUTINE = Option<unsafe extern "system" fn(
     hProcess: ::HANDLE, Address: ::DWORD,
 ) -> ::DWORD>;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PTRANSLATE_ADDRESS_ROUTINE = Option<unsafe extern "system" fn(
     hProcess: ::HANDLE, hThread: ::HANDLE, lpaddr: LPADDRESS,
 ) -> ::DWORD>;

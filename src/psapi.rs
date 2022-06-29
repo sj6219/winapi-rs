@@ -15,7 +15,7 @@ STRUCT!{struct PSAPI_WORKING_SET_BLOCK {
     Flags: ::ULONG_PTR,
     BitFields: ::ULONG_PTR,
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 BITFIELD!(PSAPI_WORKING_SET_BLOCK BitFields: ::ULONG_PTR [
     Protection set_Protection[0..5],
     ShareCount set_ShareCount[5..8],
@@ -23,7 +23,7 @@ BITFIELD!(PSAPI_WORKING_SET_BLOCK BitFields: ::ULONG_PTR [
     Reserved set_Reserved[9..12],
     VirtualPage set_VirtualPage[12..32],
 ]);
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 BITFIELD!(PSAPI_WORKING_SET_BLOCK BitFields: ::ULONG_PTR [
     Protection set_Protection[0..5],
     ShareCount set_ShareCount[5..8],
@@ -40,7 +40,7 @@ pub type PPSAPI_WORKING_SET_INFORMATION = *mut PSAPI_WORKING_SET_INFORMATION;
 STRUCT!{struct PSAPI_WORKING_SET_EX_BLOCK_Invalid {
     BitFields: ::ULONG_PTR,
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 BITFIELD!(PSAPI_WORKING_SET_EX_BLOCK_Invalid BitFields: ::ULONG_PTR [
     Valid set_Valid[0..1],
     Reserved0 set_Reserved0[1..15],
@@ -48,7 +48,7 @@ BITFIELD!(PSAPI_WORKING_SET_EX_BLOCK_Invalid BitFields: ::ULONG_PTR [
     Reserved1 set_Reserved1[16..31],
     Bad set_Bad[31..32],
 ]);
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 BITFIELD!(PSAPI_WORKING_SET_EX_BLOCK_Invalid BitFields: ::ULONG_PTR [
     Valid set_Valid[0..1],
     Reserved0 set_Reserved0[1..15],
@@ -61,7 +61,7 @@ STRUCT!{struct PSAPI_WORKING_SET_EX_BLOCK {
     Flags: ::ULONG_PTR,
     BitFields: ::ULONG_PTR,
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 BITFIELD!(PSAPI_WORKING_SET_EX_BLOCK BitFields: ::ULONG_PTR [
     Valid set_Valid[0..1],
     ShareCount set_ShareCount[1..4],
@@ -73,7 +73,7 @@ BITFIELD!(PSAPI_WORKING_SET_EX_BLOCK BitFields: ::ULONG_PTR [
     Reserved set_Reserved[24..31],
     Bad set_Bad[31..32],
 ]);
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 BITFIELD!(PSAPI_WORKING_SET_EX_BLOCK BitFields: ::ULONG_PTR [
     Valid set_Valid[0..1],
     ShareCount set_ShareCount[1..4],

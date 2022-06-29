@@ -576,7 +576,7 @@ STRUCT!{struct M128A { // FIXME align 16
     High: LONGLONG,
 }}
 pub type PM128A = *mut M128A;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{nodebug struct XSAVE_FORMAT { // FIXME align 16
     ControlWord: ::WORD,
     StatusWord: ::WORD,
@@ -595,7 +595,7 @@ STRUCT!{nodebug struct XSAVE_FORMAT { // FIXME align 16
     XmmRegisters: [M128A; 8],
     Reserved4: [::BYTE; 224],
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{nodebug struct XSAVE_FORMAT { // FIXME align 16
     ControlWord: ::WORD,
     StatusWord: ::WORD,
@@ -615,9 +615,9 @@ STRUCT!{nodebug struct XSAVE_FORMAT { // FIXME align 16
     Reserved4: [::BYTE; 96],
 }}
 //3563
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub const SIZE_OF_80387_REGISTERS: usize = 80;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{nodebug struct FLOATING_SAVE_AREA {
     ControlWord: ::DWORD,
     StatusWord: ::DWORD,
@@ -629,11 +629,11 @@ STRUCT!{nodebug struct FLOATING_SAVE_AREA {
     RegisterArea: [::BYTE; SIZE_OF_80387_REGISTERS],
     Spare0: ::DWORD,
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PFLOATING_SAVE_AREA = *mut FLOATING_SAVE_AREA;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub const MAXIMUM_SUPPORTED_EXTENSION: usize = 512;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{nodebug struct CONTEXT {
     ContextFlags: ::DWORD,
     Dr0: ::DWORD,
@@ -661,11 +661,11 @@ STRUCT!{nodebug struct CONTEXT {
     SegSs: ::DWORD,
     ExtendedRegisters: [::BYTE; MAXIMUM_SUPPORTED_EXTENSION],
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type XMM_SAVE_AREA32 = XSAVE_FORMAT;
 pub type PXMM_SAVE_AREA32 = *mut XSAVE_FORMAT;
 // FIXME - Align 16
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{nodebug struct CONTEXT {
     P1Home: ::DWORD64,
     P2Home: ::DWORD64,
@@ -1512,13 +1512,13 @@ pub type PIMAGE_OPTIONAL_HEADER64 = *mut IMAGE_OPTIONAL_HEADER64;
 pub const IMAGE_NT_OPTIONAL_HDR32_MAGIC: ::WORD = 0x10b;
 pub const IMAGE_NT_OPTIONAL_HDR64_MAGIC: ::WORD = 0x20b;
 pub const IMAGE_ROM_OPTIONAL_HDR_MAGIC: ::WORD = 0x107;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type IMAGE_OPTIONAL_HEADER = IMAGE_OPTIONAL_HEADER64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PIMAGE_OPTIONAL_HEADER = PIMAGE_OPTIONAL_HEADER64;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type IMAGE_OPTIONAL_HEADER = IMAGE_OPTIONAL_HEADER32;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PIMAGE_OPTIONAL_HEADER = PIMAGE_OPTIONAL_HEADER32;
 STRUCT!{struct IMAGE_NT_HEADERS64 {
     Signature: ::DWORD,
@@ -1537,13 +1537,13 @@ STRUCT!{struct IMAGE_ROM_HEADERS {
     OptionalHeader: IMAGE_ROM_OPTIONAL_HEADER,
 }}
 pub type PIMAGE_ROM_HEADERS = *mut IMAGE_ROM_HEADERS;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type IMAGE_NT_HEADERS = IMAGE_NT_HEADERS64;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PIMAGE_NT_HEADERS = PIMAGE_NT_HEADERS64;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type IMAGE_NT_HEADERS = IMAGE_NT_HEADERS32;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type PIMAGE_NT_HEADERS = PIMAGE_NT_HEADERS32;
 pub const IMAGE_SUBSYSTEM_UNKNOWN: ::WORD = 0;
 pub const IMAGE_SUBSYSTEM_NATIVE: ::WORD = 1;

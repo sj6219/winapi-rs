@@ -7,16 +7,16 @@ use winapi::*;
 extern "system" {
     // pub fn BindMoniker();
     // pub fn CLIPFORMAT_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn CLIPFORMAT_UserFree64();
     // pub fn CLIPFORMAT_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn CLIPFORMAT_UserMarshal64();
     // pub fn CLIPFORMAT_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn CLIPFORMAT_UserSize64();
     // pub fn CLIPFORMAT_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn CLIPFORMAT_UserUnmarshal64();
     pub fn CLSIDFromProgID(lpszProgID: LPCOLESTR, lpclsid: LPCLSID) -> HRESULT;
     // pub fn CLSIDFromProgIDEx();
@@ -180,160 +180,160 @@ extern "system" {
     // pub fn GetHookInterface();
     // pub fn GetRunningObjectTable();
     // pub fn HACCEL_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HACCEL_UserFree64();
     // pub fn HACCEL_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HACCEL_UserMarshal64();
     // pub fn HACCEL_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HACCEL_UserSize64();
     // pub fn HACCEL_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HACCEL_UserUnmarshal64();
     // pub fn HBITMAP_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBITMAP_UserFree64();
     // pub fn HBITMAP_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBITMAP_UserMarshal64();
     // pub fn HBITMAP_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBITMAP_UserSize64();
     // pub fn HBITMAP_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBITMAP_UserUnmarshal64();
     // pub fn HBRUSH_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBRUSH_UserFree64();
     // pub fn HBRUSH_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBRUSH_UserMarshal64();
     // pub fn HBRUSH_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBRUSH_UserSize64();
     // pub fn HBRUSH_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HBRUSH_UserUnmarshal64();
     // pub fn HDC_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HDC_UserFree64();
     // pub fn HDC_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HDC_UserMarshal64();
     // pub fn HDC_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HDC_UserSize64();
     // pub fn HDC_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HDC_UserUnmarshal64();
     // pub fn HENHMETAFILE_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HENHMETAFILE_UserFree64();
     // pub fn HENHMETAFILE_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HENHMETAFILE_UserMarshal64();
     // pub fn HENHMETAFILE_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HENHMETAFILE_UserSize64();
     // pub fn HENHMETAFILE_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HENHMETAFILE_UserUnmarshal64();
     // pub fn HGLOBAL_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HGLOBAL_UserFree64();
     // pub fn HGLOBAL_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HGLOBAL_UserMarshal64();
     // pub fn HGLOBAL_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HGLOBAL_UserSize64();
     // pub fn HGLOBAL_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HGLOBAL_UserUnmarshal64();
     // pub fn HICON_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HICON_UserFree64();
     // pub fn HICON_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HICON_UserMarshal64();
     // pub fn HICON_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HICON_UserSize64();
     // pub fn HICON_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HICON_UserUnmarshal64();
     // pub fn HMENU_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMENU_UserFree64();
     // pub fn HMENU_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMENU_UserMarshal64();
     // pub fn HMENU_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMENU_UserSize64();
     // pub fn HMENU_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMENU_UserUnmarshal64();
     // pub fn HMETAFILEPICT_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILEPICT_UserFree64();
     // pub fn HMETAFILEPICT_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILEPICT_UserMarshal64();
     // pub fn HMETAFILEPICT_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILEPICT_UserSize64();
     // pub fn HMETAFILEPICT_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILEPICT_UserUnmarshal64();
     // pub fn HMETAFILE_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILE_UserFree64();
     // pub fn HMETAFILE_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILE_UserMarshal64();
     // pub fn HMETAFILE_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILE_UserSize64();
     // pub fn HMETAFILE_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMETAFILE_UserUnmarshal64();
     // pub fn HMONITOR_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMONITOR_UserFree64();
     // pub fn HMONITOR_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMONITOR_UserMarshal64();
     // pub fn HMONITOR_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMONITOR_UserSize64();
     // pub fn HMONITOR_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HMONITOR_UserUnmarshal64();
     // pub fn HPALETTE_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HPALETTE_UserFree64();
     // pub fn HPALETTE_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HPALETTE_UserMarshal64();
     // pub fn HPALETTE_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HPALETTE_UserSize64();
     // pub fn HPALETTE_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HPALETTE_UserUnmarshal64();
     // pub fn HWND_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HWND_UserFree64();
     // pub fn HWND_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HWND_UserMarshal64();
     // pub fn HWND_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HWND_UserSize64();
     // pub fn HWND_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn HWND_UserUnmarshal64();
     // pub fn HkOleRegisterObject();
     // pub fn IIDFromString();
@@ -483,28 +483,28 @@ extern "system" {
     // pub fn RevokeDragDrop();
     // pub fn RoGetAgileReference();
     // pub fn SNB_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn SNB_UserFree64();
     // pub fn SNB_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn SNB_UserMarshal64();
     // pub fn SNB_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn SNB_UserSize64();
     // pub fn SNB_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn SNB_UserUnmarshal64();
     // pub fn STGMEDIUM_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn STGMEDIUM_UserFree64();
     // pub fn STGMEDIUM_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn STGMEDIUM_UserMarshal64();
     // pub fn STGMEDIUM_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn STGMEDIUM_UserSize64();
     // pub fn STGMEDIUM_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn STGMEDIUM_UserUnmarshal64();
     // pub fn SetConvertStg();
     // pub fn SetDocumentBitStg();
@@ -535,16 +535,16 @@ extern "system" {
     // pub fn UtGetDvtd16Info();
     // pub fn UtGetDvtd32Info();
     // pub fn WdtpInterfacePointer_UserFree();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn WdtpInterfacePointer_UserFree64();
     // pub fn WdtpInterfacePointer_UserMarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn WdtpInterfacePointer_UserMarshal64();
     // pub fn WdtpInterfacePointer_UserSize();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn WdtpInterfacePointer_UserSize64();
     // pub fn WdtpInterfacePointer_UserUnmarshal();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn WdtpInterfacePointer_UserUnmarshal64();
     // pub fn WriteClassStg();
     // pub fn WriteClassStm();

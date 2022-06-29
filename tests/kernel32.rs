@@ -4,7 +4,7 @@
 extern crate kernel32;
 use kernel32::*;
 #[inline(never)] fn bb<T>(_: T) {}
-#[test] #[cfg(target_arch="x86")]
+#[test] #[cfg(target_pointer_width = "32")]
 fn functions_x86() {
     bb(InterlockedCompareExchange);
     bb(InterlockedCompareExchange64);
@@ -13,7 +13,7 @@ fn functions_x86() {
     bb(InterlockedExchangeAdd);
     bb(InterlockedIncrement);
 }
-#[test] #[cfg(target_arch="x86_64")]
+#[test] #[cfg(target_pointer_width = "64")]
 fn functions_x64() {
     bb(CreateUmsCompletionList);
     bb(CreateUmsThreadContext);
@@ -44,7 +44,7 @@ fn functions_x64() {
     bb(uaw_wcslen);
     bb(uaw_wcsrchr);
 }
-#[test] #[cfg(target_arch="x86_64")] #[cfg(target_env = "msvc")]
+#[test] #[cfg(target_pointer_width = "64")] #[cfg(target_env = "msvc")]
 fn functions_x64_msvc() {
     bb(GetEnabledXStateFeatures);
     bb(GetUmsSystemThreadInformation);

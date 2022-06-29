@@ -362,7 +362,8 @@ pub type __uint32 = u32;
 pub type __int64 = i64;
 pub type __uint64 = u64;
 pub type wchar_t = c_ushort;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 pub type size_t = c_uint;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type size_t = __uint64;
+

@@ -10,5 +10,5 @@ ENUM!{enum EXCEPTION_DISPOSITION {
 pub struct _EXCEPTION_RECORD;
 #[repr(C)] #[derive(Clone, Copy, Debug)]
 pub struct _CONTEXT;
-#[cfg(target_arch = "x86_64")] #[repr(C)] #[derive(Clone, Copy, Debug)]
+#[cfg(target_pointer_width = "64")] #[repr(C)] #[derive(Clone, Copy, Debug)]
 pub struct _DISPATCHER_CONTEXT;

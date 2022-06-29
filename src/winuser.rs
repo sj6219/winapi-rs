@@ -1272,12 +1272,12 @@ pub type LPHARDWAREINPUT= *mut HARDWAREINPUT;
 pub const INPUT_MOUSE: ::DWORD = 0;
 pub const INPUT_KEYBOARD: ::DWORD = 1;
 pub const INPUT_HARDWARE: ::DWORD = 2;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct INPUT {
     type_: ::DWORD,
     u: [u32; 6],
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct INPUT {
     type_: ::DWORD,
     u: [u64; 4],

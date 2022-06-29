@@ -112,7 +112,7 @@ extern "system" {
     // pub fn LdrGetDllHandleEx();
     // pub fn LdrGetDllPath();
     // pub fn LdrGetFileNameFromLoadAsDataTable();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn LdrGetKnownDllSectionHandle();
     // pub fn LdrGetProcedureAddress();
     // pub fn LdrGetProcedureAddressEx();
@@ -123,7 +123,7 @@ extern "system" {
     // pub fn LdrLoadDll();
     // pub fn LdrLockLoaderLock();
     // pub fn LdrOpenImageFileOptionsKey();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn LdrProcessInitializationComplete();
     // pub fn LdrProcessRelocationBlock();
     // pub fn LdrProcessRelocationBlockEx();
@@ -270,7 +270,7 @@ extern "system" {
     // pub fn NtCreateWaitablePort();
     // pub fn NtCreateWnfStateName();
     // pub fn NtCreateWorkerFactory();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn NtCurrentTeb();
     // pub fn NtDebugActiveProcess();
     // pub fn NtDebugContinue();
@@ -680,7 +680,7 @@ extern "system" {
     // pub fn RtlCanonicalizeDomainName();
     // pub fn RtlCaptureContext();
     // pub fn RtlCaptureStackBackTrace();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlCaptureStackContext();
     // pub fn RtlCharToInteger();
     // pub fn RtlCheckForOrphanedCriticalSections();
@@ -704,7 +704,7 @@ extern "system" {
     // pub fn RtlCompareString();
     // pub fn RtlCompareUnicodeString();
     // pub fn RtlCompareUnicodeStrings();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlCompleteProcessCloning();
     // pub fn RtlCompressBuffer();
     // pub fn RtlComputeCrc32();
@@ -715,12 +715,12 @@ extern "system" {
     // pub fn RtlContractHashTable();
     // pub fn RtlConvertExclusiveToShared();
     // pub fn RtlConvertLCIDToString();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlConvertLongToLargeInteger();
     // pub fn RtlConvertSharedToExclusive();
     // pub fn RtlConvertSidToUnicodeString();
     // pub fn RtlConvertToAutoInheritSecurityObject();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlConvertUlongToLargeInteger();
     // pub fn RtlCopyBitMap();
     // pub fn RtlCopyContext();
@@ -730,7 +730,7 @@ extern "system" {
     // pub fn RtlCopyMappedMemory();
     // #[cfg(any(target_arch = "arm", target_arch = "x86_64"))]
     // pub fn RtlCopyMemory();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlCopyMemoryNonTemporal();
     // pub fn RtlCopySecurityDescriptor();
     // pub fn RtlCopySid();
@@ -763,9 +763,9 @@ extern "system" {
     // pub fn RtlCreateTagHeap();
     // pub fn RtlCreateTimer();
     // pub fn RtlCreateTimerQueue();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlCreateUmsCompletionList();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlCreateUmsThreadContext();
     // pub fn RtlCreateUnicodeString();
     // pub fn RtlCreateUnicodeStringFromAsciiz();
@@ -808,11 +808,11 @@ extern "system" {
     // pub fn RtlDeleteTimer();
     // pub fn RtlDeleteTimerQueue();
     // pub fn RtlDeleteTimerQueueEx();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlDeleteUmsCompletionList();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlDeleteUmsThreadContext();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlDequeueUmsCompletionListItems();
     // pub fn RtlDeregisterSecureMemoryCacheCallback();
     // pub fn RtlDeregisterWait();
@@ -849,12 +849,12 @@ extern "system" {
     // pub fn RtlEncodeSystemPointer();
     // pub fn RtlEndEnumerationHashTable();
     // pub fn RtlEndWeakEnumerationHashTable();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlEnlargedIntegerMultiply();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlEnlargedUnsignedMultiply();
     // pub fn RtlEnterCriticalSection();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlEnterUmsSchedulingMode();
     // pub fn RtlEnumProcessHeaps();
     // pub fn RtlEnumerateEntryHashTable();
@@ -876,7 +876,7 @@ extern "system" {
     // pub fn RtlEthernetAddressToStringW();
     // pub fn RtlEthernetStringToAddressA();
     // pub fn RtlEthernetStringToAddressW();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlExecuteUmsThread();
     // pub fn RtlExitUserProcess();
     // pub fn RtlExitUserThread();
@@ -885,9 +885,9 @@ extern "system" {
     // pub fn RtlExpandHashTable();
     // pub fn RtlExtendMemoryBlockLookaside();
     // pub fn RtlExtendMemoryZone();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlExtendedIntegerMultiply();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlExtendedLargeIntegerDivide();
     // #[cfg(any(target_arch = "arm", target_arch = "x86"))]
     // pub fn RtlExtendedMagicDivide();
@@ -947,7 +947,7 @@ extern "system" {
     // pub fn RtlGetCurrentProcessorNumber();
     // pub fn RtlGetCurrentProcessorNumberEx();
     // pub fn RtlGetCurrentTransaction();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlGetCurrentUmsThread();
     // pub fn RtlGetDaclSecurityDescriptor();
     // pub fn RtlGetElementGenericTable();
@@ -973,7 +973,7 @@ extern "system" {
     // pub fn RtlGetLongestNtPathLength();
     // pub fn RtlGetNativeSystemInformation();
     // pub fn RtlGetNextEntryHashTable();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlGetNextUmsListItem();
     // pub fn RtlGetNtGlobalFlags();
     // pub fn RtlGetNtProductType();
@@ -991,7 +991,7 @@ extern "system" {
     // pub fn RtlGetThreadLangIdByIndex();
     // pub fn RtlGetThreadPreferredUILanguages();
     // pub fn RtlGetUILanguageInfo();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlGetUmsCompletionListEvent();
     // pub fn RtlGetUnloadEventTrace();
     // pub fn RtlGetUnloadEventTraceEx();
@@ -1028,7 +1028,7 @@ extern "system" {
     // pub fn RtlInitializeCriticalSection();
     // pub fn RtlInitializeCriticalSectionAndSpinCount();
     // pub fn RtlInitializeCriticalSectionEx();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlInitializeExceptionChain();
     // pub fn RtlInitializeExtendedContext();
     // pub fn RtlInitializeGenericTable();
@@ -1050,7 +1050,7 @@ extern "system" {
     // pub fn RtlIntegerToChar();
     // pub fn RtlIntegerToUnicodeString();
     // pub fn RtlInterlockedClearBitRun();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlInterlockedCompareExchange64();
     // pub fn RtlInterlockedFlushSList();
     // pub fn RtlInterlockedPopEntrySList();
@@ -1097,19 +1097,19 @@ extern "system" {
     // pub fn RtlIsValidProcessTrustLabelSid();
     // pub fn RtlKnownExceptionFilter();
     // pub fn RtlLCIDToCultureName();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlLargeIntegerAdd();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlLargeIntegerArithmeticShift();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlLargeIntegerDivide();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlLargeIntegerNegate();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlLargeIntegerShiftLeft();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlLargeIntegerShiftRight();
-    // #[cfg(target_arch = "x86")]
+    // #[cfg(target_pointer_width = "32")]
     // pub fn RtlLargeIntegerSubtract();
     // pub fn RtlLargeIntegerToChar();
     // pub fn RtlLcidToLocaleName();
@@ -1157,7 +1157,7 @@ extern "system" {
     // pub fn RtlNtPathNameToDosPathName();
     // pub fn RtlNtStatusToDosError();
     // pub fn RtlNtStatusToDosErrorNoTeb();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlNtdllName();
     // pub fn RtlNumberGenericTableElements();
     // pub fn RtlNumberGenericTableElementsAvl();
@@ -1176,7 +1176,7 @@ extern "system" {
     // pub fn RtlPopFrame();
     // pub fn RtlPrefixString();
     // pub fn RtlPrefixUnicodeString();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlPrepareForProcessCloning();
     // pub fn RtlProcessFlsData();
     // pub fn RtlPublishWnfStateData();
@@ -1206,7 +1206,7 @@ extern "system" {
     // pub fn RtlQuerySecurityObject();
     // pub fn RtlQueryThreadProfiling();
     // pub fn RtlQueryTimeZoneInformation();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlQueryUmsThreadInformation();
     // pub fn RtlQueryUnbiasedInterruptTime();
     // pub fn RtlQueryValidationRunlevel();
@@ -1299,7 +1299,7 @@ extern "system" {
     // pub fn RtlSetThreadPreferredUILanguages();
     // pub fn RtlSetTimeZoneInformation();
     // pub fn RtlSetTimer();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlSetUmsThreadInformation();
     // pub fn RtlSetUnhandledExceptionFilter();
     // pub fn RtlSetUserFlagsHeap();
@@ -1349,7 +1349,7 @@ extern "system" {
     // pub fn RtlUlongByteSwap();
     // #[cfg(any(target_arch = "arm", target_arch = "x86"))]
     // pub fn RtlUlonglongByteSwap();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlUmsThreadYield();
     // pub fn RtlUnhandledExceptionFilter();
     // pub fn RtlUnhandledExceptionFilter2();
@@ -1419,15 +1419,15 @@ extern "system" {
     // pub fn RtlWow64CallFunction64();
     // pub fn RtlWow64EnableFsRedirection();
     // pub fn RtlWow64EnableFsRedirectionEx();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlWow64GetThreadContext();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlWow64GetThreadSelectorEntry();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlWow64LogMessageInEventLogger();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlWow64SetThreadContext();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlWow64SuspendThread();
     // pub fn RtlWriteRegistryValue();
     // pub fn RtlZeroMemory();
@@ -1462,7 +1462,7 @@ extern "system" {
     // pub fn RtlpNtQueryValueKey();
     // pub fn RtlpNtSetValueKey();
     // pub fn RtlpQueryDefaultUILanguage();
-    // #[cfg(target_arch = "x86_64")]
+    // #[cfg(target_pointer_width = "64")]
     // pub fn RtlpQueryProcessDebugInformationFromWow64();
     // pub fn RtlpRefreshCachedUILanguage();
     // pub fn RtlpSetInstallLanguage();

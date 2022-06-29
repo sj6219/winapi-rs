@@ -430,9 +430,9 @@ extern "system" {
         DueTime: DWORD, Period: DWORD, Flags: ULONG,
     ) -> BOOL;
     pub fn CreateToolhelp32Snapshot(dwFlags: DWORD, th32ProcessID: DWORD) -> HANDLE;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn CreateUmsCompletionList(UmsCompletionList: *mut PUMS_COMPLETION_LIST) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn CreateUmsThreadContext(lpUmsThread: *mut PUMS_CONTEXT) -> BOOL;
     pub fn CreateWaitableTimerA(
         lpTimerAttributes: LPSECURITY_ATTRIBUTES, bManualReset: BOOL, lpTimerName: LPCSTR,
@@ -475,13 +475,13 @@ extern "system" {
     pub fn DeleteTimerQueueTimer(
         TimerQueue: HANDLE, Timer: HANDLE, CompletionEvent: HANDLE,
     ) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn DeleteUmsCompletionList(UmsCompletionList: PUMS_COMPLETION_LIST) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn DeleteUmsThreadContext(UmsThread: PUMS_CONTEXT) -> BOOL;
     pub fn DeleteVolumeMountPointA(lpszVolumeMountPoint: LPCSTR) -> BOOL;
     pub fn DeleteVolumeMountPointW(lpszVolumeMountPoint: LPCWSTR) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn DequeueUmsCompletionListItems(
         UmsCompletionList: PUMS_COMPLETION_LIST, WaitTimeOut: DWORD,
         UmsThreadList: *mut PUMS_CONTEXT,
@@ -522,7 +522,7 @@ extern "system" {
     pub fn EnterSynchronizationBarrier(
         lpBarrier: LPSYNCHRONIZATION_BARRIER, dwFlags: DWORD,
     ) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn EnterUmsSchedulingMode(SchedulerStartupInfo: PUMS_SCHEDULER_STARTUP_INFO) -> BOOL;
     pub fn EnumCalendarInfoA(
         lpCalInfoEnumProc: CALINFO_ENUMPROCA, Locale: LCID, Calendar: CALID, CalType: CALTYPE,
@@ -647,7 +647,7 @@ extern "system" {
     // pub fn EnumerateLocalComputerNamesW();
     pub fn EraseTape(hDevice: HANDLE, dwEraseType: DWORD, bImmediate: BOOL) -> DWORD;
     pub fn EscapeCommFunction(hFile: HANDLE, dwFunc: DWORD) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn ExecuteUmsThread(UmsThread: PUMS_CONTEXT) -> BOOL;
     pub fn ExitProcess(uExitCode: UINT);
     pub fn ExitThread(dwExitCode: DWORD);
@@ -958,7 +958,7 @@ extern "system" {
     pub fn GetCurrentThread() -> HANDLE;
     pub fn GetCurrentThreadId() -> DWORD;
     pub fn GetCurrentThreadStackLimits(LowLimit: PULONG_PTR, HighLimit: PULONG_PTR);
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetCurrentUmsThread() -> PUMS_CONTEXT;
     pub fn GetDateFormatA(
         Locale: LCID, dwFlags: DWORD, lpDate: *const SYSTEMTIME, lpFormat: LPCSTR, lpDateStr: LPSTR,
@@ -1185,7 +1185,7 @@ extern "system" {
     pub fn GetNamedPipeServerProcessId(Pipe: HANDLE, ServerProcessId: PULONG) -> BOOL;
     pub fn GetNamedPipeServerSessionId(Pipe: HANDLE, ServerSessionId: PULONG) -> BOOL;
     pub fn GetNativeSystemInfo(lpSystemInfo: LPSYSTEM_INFO);
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetNextUmsListItem(UmsContext: PUMS_CONTEXT) -> PUMS_CONTEXT;
     pub fn GetNumaAvailableMemoryNode(Node: UCHAR, AvailableBytes: PULONGLONG) -> BOOL;
     pub fn GetNumaAvailableMemoryNodeEx(Node: USHORT, AvailableBytes: PULONGLONG) -> BOOL;
@@ -1453,11 +1453,11 @@ extern "system" {
         dwFlags: DWORD, pwmszLanguage: PCZZWSTR, pwszFallbackLanguages: PZZWSTR,
         pcchFallbackLanguages: PDWORD, pAttributes: PDWORD,
     ) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetUmsCompletionListEvent(
         UmsCompletionList: PUMS_COMPLETION_LIST, UmsCompletionEvent: PHANDLE,
     ) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn GetUmsSystemThreadInformation(
         ThreadHandle: HANDLE, SystemThreadInfo: PUMS_SYSTEM_THREAD_INFORMATION,
     ) -> BOOL;
@@ -1596,22 +1596,22 @@ extern "system" {
         lpBarrier: LPSYNCHRONIZATION_BARRIER, lTotalThreads: LONG, lSpinCount: LONG,
     ) -> BOOL;
     pub fn InstallELAMCertificateInfo(ELAMFile: HANDLE) -> BOOL;
-    #[cfg(target_arch = "x86")]
+    #[cfg(target_pointer_width = "32")]
     pub fn InterlockedCompareExchange(
         Destination: *mut LONG, ExChange: LONG, Comperand: LONG,
     ) -> LONG;
-    #[cfg(target_arch = "x86")]
+    #[cfg(target_pointer_width = "32")]
     pub fn InterlockedCompareExchange64(
         Destination: *mut LONG64, ExChange: LONG64, Comperand: LONG64,
     ) -> LONG64;
-    #[cfg(target_arch = "x86")]
+    #[cfg(target_pointer_width = "32")]
     pub fn InterlockedDecrement(Addend: *mut LONG) -> LONG;
-    #[cfg(target_arch = "x86")]
+    #[cfg(target_pointer_width = "32")]
     pub fn InterlockedExchange(Target: *mut LONG, Value: LONG) -> LONG;
-    #[cfg(target_arch = "x86")]
+    #[cfg(target_pointer_width = "32")]
     pub fn InterlockedExchangeAdd(Addend: *mut LONG, Value: LONG) -> LONG;
     pub fn InterlockedFlushSList(ListHead: PSLIST_HEADER) -> PSLIST_ENTRY;
-    #[cfg(target_arch = "x86")]
+    #[cfg(target_pointer_width = "32")]
     pub fn InterlockedIncrement(Addend: *mut LONG) -> LONG;
     pub fn InterlockedPopEntrySList(ListHead: PSLIST_HEADER) -> PSLIST_ENTRY;
     pub fn InterlockedPushEntrySList(
@@ -1975,7 +1975,7 @@ extern "system" {
     pub fn QueryThreadpoolStackInformation(
         ptpp: PTP_POOL, ptpsi: PTP_POOL_STACK_INFORMATION,
     ) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn QueryUmsThreadInformation(
         UmsThread: PUMS_CONTEXT, UmsThreadInfoClass: UMS_THREAD_INFO_CLASS,
         UmsThreadInformation: PVOID, UmsThreadInformationLength: ULONG, ReturnLength: PULONG,
@@ -2118,7 +2118,7 @@ extern "system" {
     pub fn RtlAddFunctionTable(
         FunctionTable: PRUNTIME_FUNCTION, EntryCount: DWORD, BaseAddress: DWORD,
     ) -> BOOLEAN;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn RtlAddFunctionTable(
         FunctionTable: PRUNTIME_FUNCTION, EntryCount: DWORD, BaseAddress: DWORD64,
     ) -> BOOLEAN;
@@ -2138,7 +2138,7 @@ extern "system" {
         TableIdentifier: DWORD, BaseAddress: DWORD, Length: DWORD,
         Callback: PGET_RUNTIME_FUNCTION_CALLBACK, Context: PVOID, OutOfProcessCallbackDll: PCWSTR,
     ) -> BOOLEAN;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn RtlInstallFunctionTableCallback(
         TableIdentifier: DWORD64, BaseAddress: DWORD64, Length: DWORD,
         Callback: PGET_RUNTIME_FUNCTION_CALLBACK, Context: PVOID, OutOfProcessCallbackDll: PCWSTR,
@@ -2147,7 +2147,7 @@ extern "system" {
     pub fn RtlLookupFunctionEntry(
         ControlPc: ULONG_PTR, ImageBase: PDWORD, HistoryTable: PUNWIND_HISTORY_TABLE,
     ) -> PRUNTIME_FUNCTION;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn RtlLookupFunctionEntry(
         ControlPc: DWORD64, ImageBase: PDWORD64, HistoryTable: PUNWIND_HISTORY_TABLE,
     ) -> PRUNTIME_FUNCTION;
@@ -2172,7 +2172,7 @@ extern "system" {
         ContextRecord: PCONTEXT, HandlerData: *mut PVOID, EstablisherFrame: PDWORD,
         ContextPointers: PKNONVOLATILE_CONTEXT_POINTERS,
     ) -> PEXCEPTION_ROUTINE;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn RtlVirtualUnwind(
         HandlerType: DWORD, ImageBase: DWORD64, ControlPc: DWORD64,
         FunctionEntry: PRUNTIME_FUNCTION, ContextRecord: PCONTEXT, HandlerData: *mut PVOID,
@@ -2421,7 +2421,7 @@ extern "system" {
         TimerQueue: HANDLE, Callback: WAITORTIMERCALLBACK, Parameter: PVOID, DueTime: DWORD,
         Period: DWORD, PreferIo: BOOL,
     ) -> HANDLE;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn SetUmsThreadInformation(
         UmsThread: PUMS_CONTEXT, UmsThreadInfoClass: UMS_THREAD_INFO_CLASS,
         UmsThreadInformation: PVOID, UmsThreadInformationLength: ULONG,
@@ -2505,7 +2505,7 @@ extern "system" {
         lpTimeZoneInformation: *const DYNAMIC_TIME_ZONE_INFORMATION,
         lpLocalTime: *const SYSTEMTIME, lpUniversalTime: LPSYSTEMTIME,
     ) -> BOOL;
-    #[cfg(target_arch = "x86_64")]
+    #[cfg(target_pointer_width = "64")]
     pub fn UmsThreadYield(SchedulerParam: PVOID) -> BOOL;
     pub fn UnhandledExceptionFilter(ExceptionInfo: *mut EXCEPTION_POINTERS) -> LONG;
     pub fn UnlockFile(

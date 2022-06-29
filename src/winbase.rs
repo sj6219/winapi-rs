@@ -357,13 +357,13 @@ STRUCT!{struct COPYFILE2_MESSAGE_Error {
     uliTotalFileSize: ::ULARGE_INTEGER,
     uliTotalBytesTransferred: ::ULARGE_INTEGER,
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct COPYFILE2_MESSAGE {
     Type: COPYFILE2_MESSAGE_TYPE,
     dwPadding: ::DWORD,
     Info: [u64; 8],
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct COPYFILE2_MESSAGE {
     Type: COPYFILE2_MESSAGE_TYPE,
     dwPadding: ::DWORD,

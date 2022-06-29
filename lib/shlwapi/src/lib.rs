@@ -4,7 +4,7 @@
 #![cfg(windows)]
 extern crate winapi;
 use winapi::*;
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 extern "cdecl" {
     // pub fn ShellMessageBoxA();
     // pub fn ShellMessageBoxW();

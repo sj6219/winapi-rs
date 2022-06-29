@@ -49,12 +49,12 @@ STRUCT!{struct SAFEARRAYUNION {
     sfType: ::ULONG,
     u: __MIDL_IOleAutomationTypes_0001,
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct __MIDL_IOleAutomationTypes_0001 {
     data0: u32,
     data1: [u32; 6],
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct __MIDL_IOleAutomationTypes_0001 {
     data0: u32,
     data1: [u32; 5],
@@ -100,13 +100,13 @@ pub const FADF_UNKNOWN: ::DWORD = 0x200;
 pub const FADF_DISPATCH: ::DWORD = 0x400;
 pub const FADF_VARIANT: ::DWORD = 0x800;
 pub const FADF_RESERVED: ::DWORD = 0xf008;
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct VARIANT {
     data0: u64,
     data1: u64,
     data2: u64,
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct VARIANT {
     data0: u64,
     data1: u32,
@@ -237,12 +237,12 @@ ENUM!{enum TYPEKIND {
     TKIND_UNION,
     TKIND_MAX,
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct TYPEDESC {
     data: u64,
     vt: ::VARTYPE,
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct TYPEDESC {
     data: u32,
     vt: ::VARTYPE,

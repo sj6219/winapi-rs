@@ -2,12 +2,12 @@
 // Licensed under the MIT License <LICENSE.md>
 //! This interface definition contains typedefs for Windows Runtime data types.
 DECLARE_HANDLE!(HSTRING, HSTRING__);
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{struct HSTRING_HEADER {
     Reserved: [::PVOID; 0], // For alignment
     Reserved2: [::c_char; 24],
 }}
-#[cfg(target_arch = "x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{struct HSTRING_HEADER {
     Reserved: [::PVOID; 0], // For alignment
     Reserved2: [::c_char; 20],

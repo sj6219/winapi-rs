@@ -37,12 +37,12 @@ STRUCT!{struct DFS_INFO_1 {
 }}
 pub type PDFS_INFO_1 = *mut DFS_INFO_1;
 pub type LPDFS_INFO_1 = *mut DFS_INFO_1;
-#[cfg(target_arch="x86_64")] STRUCT!{struct DFS_INFO_1_32 {
+#[cfg(target_pointer_width = "64")] STRUCT!{struct DFS_INFO_1_32 {
     EntryPath: ::ULONG,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PDFS_INFO_1_32 = *mut DFS_INFO_1_32;
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type LPDFS_INFO_1_32 = *mut DFS_INFO_1_32;
 STRUCT!{struct DFS_INFO_2 {
     EntryPath: ::LPWSTR,
@@ -52,15 +52,15 @@ STRUCT!{struct DFS_INFO_2 {
 }}
 pub type PDFS_INFO_2 = *mut DFS_INFO_2;
 pub type LPDFS_INFO_2 = *mut DFS_INFO_2;
-#[cfg(target_arch="x86_64")] STRUCT!{struct DFS_INFO_2_32 {
+#[cfg(target_pointer_width = "64")] STRUCT!{struct DFS_INFO_2_32 {
     EntryPath: ::ULONG,
     Comment: ::ULONG,
     State: ::DWORD,
     NumberOfStorages: ::DWORD,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PDFS_INFO_2_32 = *mut DFS_INFO_2_32;
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type LPDFS_INFO_2_32 = *mut DFS_INFO_2_32;
 STRUCT!{struct DFS_STORAGE_INFO {
     State: ::ULONG,
@@ -69,14 +69,14 @@ STRUCT!{struct DFS_STORAGE_INFO {
 }}
 pub type PDFS_STORAGE_INFO = *mut DFS_STORAGE_INFO;
 pub type LPDFS_STORAGE_INFO = *mut DFS_STORAGE_INFO;
-#[cfg(target_arch="x86_64")] STRUCT!{struct DFS_STORAGE_INFO_0_32 {
+#[cfg(target_pointer_width = "64")] STRUCT!{struct DFS_STORAGE_INFO_0_32 {
     State: ::ULONG,
     ServerName: ::ULONG,
     ShareName: ::ULONG,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PDFS_STORAGE_INFO_0_32 = *mut DFS_STORAGE_INFO_0_32;
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type LPDFS_STORAGE_INFO_0_32 = *mut DFS_STORAGE_INFO_0_32;
 STRUCT!{struct DFS_STORAGE_INFO_1 {
     State: ::ULONG,
@@ -95,16 +95,16 @@ STRUCT!{struct DFS_INFO_3 {
 }}
 pub type PDFS_INFO_3 = *mut DFS_INFO_3;
 pub type LPDFS_INFO_3 = *mut DFS_INFO_3;
-#[cfg(target_arch="x86_64")] STRUCT!{struct DFS_INFO_3_32 {
+#[cfg(target_pointer_width = "64")] STRUCT!{struct DFS_INFO_3_32 {
     EntryPath: ::ULONG,
     Comment: ::ULONG,
     State: ::DWORD,
     NumberOfStorages: ::DWORD,
     Storage: ::ULONG,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PDFS_INFO_3_32 = *mut DFS_INFO_3_32;
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type LPDFS_INFO_3_32 = *mut DFS_INFO_3_32;
 STRUCT!{struct DFS_INFO_4 {
     EntryPath: ::LPWSTR,
@@ -117,7 +117,7 @@ STRUCT!{struct DFS_INFO_4 {
 }}
 pub type PDFS_INFO_4 = *mut DFS_INFO_4;
 pub type LPDFS_INFO_4 = *mut DFS_INFO_4;
-#[cfg(target_arch="x86_64")] STRUCT!{struct DFS_INFO_4_32 {
+#[cfg(target_pointer_width = "64")] STRUCT!{struct DFS_INFO_4_32 {
     EntryPath: ::ULONG,
     Comment: ::ULONG,
     State: ::DWORD,
@@ -126,9 +126,9 @@ pub type LPDFS_INFO_4 = *mut DFS_INFO_4;
     NumberOfStorages: ::DWORD,
     Storage: ::ULONG,
 }}
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type PDFS_INFO_4_32 = *mut DFS_INFO_4_32;
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 pub type LPDFS_INFO_4_32 = *mut DFS_INFO_4_32;
 STRUCT!{struct DFS_INFO_5 {
     EntryPath: ::LPWSTR,

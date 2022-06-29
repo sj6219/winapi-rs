@@ -4,7 +4,7 @@
 pub const NCBNAMSZ: usize = 16;
 pub const MAX_LANA: usize = 254;
 pub type PFPOST = Option<unsafe extern "system" fn(*mut NCB)>;
-#[cfg(target_arch="x86_64")]
+#[cfg(target_pointer_width = "64")]
 STRUCT!{nodebug struct NCB {
     ncb_command: ::UCHAR,
     ncb_retcode: ::UCHAR,
@@ -22,7 +22,7 @@ STRUCT!{nodebug struct NCB {
     ncb_reserve: [::UCHAR; 18],
     ncb_event: ::HANDLE,
 }}
-#[cfg(target_arch="x86")]
+#[cfg(target_pointer_width = "32")]
 STRUCT!{nodebug struct NCB {
     ncb_command: ::UCHAR,
     ncb_retcode: ::UCHAR,

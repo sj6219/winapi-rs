@@ -4,7 +4,7 @@
 extern crate user32;
 use user32::*;
 #[inline(never)] fn bb<T>(_: T) {}
-#[cfg(target_arch = "x86_64")]
+#[cfg(target_pointer_width = "64")]
 #[test]
 fn functions_x64() {
     bb(GetClassLongPtrA);
